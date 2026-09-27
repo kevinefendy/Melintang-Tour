@@ -1,13 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { ExperienceCard } from "@/components/cards";
 import { SectionHeading } from "@/components/ui";
 import { experiences } from "@/data/mock";
 
 export default function ExperiencesClient() {
-  const [q, setQ] = useState("");
+  const sp = useSearchParams();
+  const [q, setQ] = useState(sp.get("q") ?? "");
   const [cat, setCat] = useState("All");
   const cats = ["All", ...Array.from(new Set(experiences.map((e) => e.category)))];
 

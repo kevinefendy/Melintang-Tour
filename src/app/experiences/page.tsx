@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import ExperiencesClient from "./experiences-client";
 
 export const metadata: Metadata = {
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function ExperiencesPage() {
-  return <ExperiencesClient />;
+  return (
+    <Suspense fallback={<div className="container-shell py-16 text-slate-500">Loading experiences…</div>}>
+      <ExperiencesClient />
+    </Suspense>
+  );
 }
