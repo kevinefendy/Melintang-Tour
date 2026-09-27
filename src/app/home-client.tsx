@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowRight, ShieldCheck, Sparkles, Wallet, Headset, Globe2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import SearchBox from "@/components/SearchBox";
 import { ArticleCard, DestinationCard, PromoCard, TourCard } from "@/components/cards";
 import { Button, SectionHeading } from "@/components/ui";
@@ -11,14 +11,6 @@ import ConsultantCTA from "@/components/sections";
 import { articles, deals, destinations, tours } from "@/data/mock";
 
 const filters = ["All", "Domestic", "International", "Family", "Honeymoon", "Private", "Group"] as const;
-
-const why = [
-  { icon: Sparkles, title: "01 — Curated Journey", desc: "Paket perjalanan disusun untuk pengalaman yang lebih terarah." },
-  { icon: Wallet, title: "02 — Transparent Information", desc: "Harga, itinerary, fasilitas, dan ketentuan tampil jelas." },
-  { icon: ShieldCheck, title: "03 — Easy Booking", desc: "Dari pilih tour sampai pembayaran, dibuat sederhana." },
-  { icon: Headset, title: "04 — Travel Support", desc: "Butuh bantuan? Travel consultant siap dihubungi." },
-  { icon: Globe2, title: "05 — One Travel Platform", desc: "Destinasi, tour, experience, promo & guide dalam satu tempat." },
-];
 
 export default function HomeClient() {
   const [tab, setTab] = useState<(typeof filters)[number]>("All");
@@ -125,25 +117,6 @@ export default function HomeClient() {
           {deals.slice(0, 2).map((d) => (
             <PromoCard key={d.slug} deal={d} />
           ))}
-        </div>
-      </section>
-
-      {/* WHY */}
-      <section className="bg-navy">
-        <div className="container-shell py-16 md:py-20">
-          <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-sky">Why Melintang Tour</p>
-          <h2 className="mt-3 max-w-xl font-heading text-3xl font-extrabold text-white md:text-4xl">
-            Bukan sekadar katalog. Ini cara baru merencanakan perjalanan.
-          </h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3 lg:grid-cols-5">
-            {why.map((w) => (
-              <div key={w.title} className="rounded-3xl bg-navy-light p-6">
-                <w.icon className="h-7 w-7 text-sky" />
-                <h3 className="mt-4 font-heading font-extrabold text-white">{w.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{w.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
