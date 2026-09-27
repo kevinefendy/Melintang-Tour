@@ -10,17 +10,17 @@ export default function ConsultantCTA({
   desc?: string;
 }) {
   return (
-    <section className="container-shell pb-20">
-      <div className="relative overflow-hidden rounded-[2rem] bg-navy px-8 py-14 text-center md:py-16">
+    <section className="container-shell pb-14">
+      <div className="relative overflow-hidden rounded-2xl bg-navy px-6 py-10 text-center md:py-12">
         <div className="relative mx-auto max-w-2xl">
-          <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-sky">
-            <Headset className="h-7 w-7" />
+          <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-sky">
+            <Headset className="h-5 w-5" />
           </span>
-          <h2 className="mt-5 font-heading text-3xl font-extrabold text-white md:text-4xl">{title}</h2>
-          <p className="mt-3 text-slate-300">{desc}</p>
-          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-            <Link href="/contact"><Button size="lg">Talk to a Travel Consultant</Button></Link>
-            <Link href="/custom-trip"><Button size="lg" variant="light">Build My Trip</Button></Link>
+          <h2 className="mt-4 font-heading text-2xl font-extrabold text-white md:text-3xl">{title}</h2>
+          <p className="mt-2 text-[15px] text-slate-300">{desc}</p>
+          <div className="mt-5 flex flex-col justify-center gap-2 sm:flex-row">
+            <Link href="/contact"><Button>Talk to a Travel Consultant</Button></Link>
+            <Link href="/custom-trip"><Button variant="light">Build My Trip</Button></Link>
           </div>
         </div>
       </div>

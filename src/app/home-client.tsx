@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, Sparkles, Wallet, Headset, Globe2 } from "lucide-react";
@@ -27,26 +28,36 @@ export default function HomeClient() {
   return (
     <main>
       {/* HERO */}
-      <section className="bg-ocean">
-        <div className="container-shell pb-28 pt-16 text-center md:pb-32 md:pt-20">
-          <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 text-center shadow-2xl shadow-navy/30 md:p-10">
-            <h1 className="font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-ocean md:text-5xl">
+      <section className="relative overflow-hidden bg-navy">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2000&auto=format&fit=crop"
+            alt="Japan temple and mountains"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-navy/55" />
+        </div>
+        <div className="container-shell relative pb-24 pt-12 text-center md:pb-28 md:pt-16">
+          <div className="mx-auto max-w-2xl rounded-2xl bg-white p-6 text-center shadow-xl md:p-8">
+            <h1 className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-ocean md:text-4xl">
               Berhenti Scroll. Mulai Packing.
             </h1>
-            <p className="mx-auto mt-4 max-w-xl text-slate-600 md:text-lg">
+            <p className="mx-auto mt-3 max-w-xl text-[15px] text-slate-600">
               48.000+ traveler sudah berangkat bareng Melintang Tour. Destinasi,
               tour, dan itinerary beres dalam satu platform — giliranmu kapan?
             </p>
           </div>
-          <div className="mt-7 flex items-center justify-center gap-8 text-white md:gap-12">
+          <div className="mt-6 flex items-center justify-center gap-8 text-white md:gap-12">
             {[
               ["48K+", "Traveler berangkat"],
               ["120+", "Tour terkurasi"],
               ["4.9/5", "Rating traveler"],
             ].map(([n, l]) => (
               <div key={l}>
-                <p className="font-heading text-2xl font-extrabold md:text-4xl">{n}</p>
-                <p className="mt-1 text-xs font-semibold text-sky-100 md:text-sm">{l}</p>
+                <p className="font-heading text-xl font-extrabold md:text-2xl">{n}</p>
+                <p className="mt-0.5 text-xs font-semibold text-slate-200 md:text-[13px]">{l}</p>
               </div>
             ))}
           </div>

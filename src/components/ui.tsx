@@ -6,7 +6,7 @@ type Variant = "primary" | "secondary" | "outline" | "ghost" | "light";
 type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-ocean text-white hover:bg-ocean-dark shadow-lg shadow-ocean/20",
+  primary: "bg-ocean text-white hover:bg-ocean-dark",
   secondary: "bg-navy text-white hover:bg-navy-light",
   outline: "border border-slate-300 bg-white text-navy hover:border-ocean hover:text-ocean",
   ghost: "text-navy hover:bg-slate-100",
@@ -14,9 +14,9 @@ const variants: Record<Variant, string> = {
 };
 
 const sizes: Record<Size, string> = {
-  sm: "h-9 px-4 text-sm",
-  md: "h-11 px-6 text-sm",
-  lg: "h-13 px-8 py-3.5 text-base",
+  sm: "h-8 px-3.5 text-[13px]",
+  md: "h-10 px-5 text-sm",
+  lg: "px-6 py-2.5 text-[15px]",
 };
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -28,7 +28,7 @@ export function Button({ variant = "primary", size = "md", className, ...props }
   return (
     <button
       className={cn(
-        "inline-flex cursor-pointer items-center justify-center gap-2 rounded-full font-heading font-bold transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50",
+        "inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg font-heading font-bold transition-all active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50",
         variants[variant],
         sizes[size],
         className
@@ -47,7 +47,7 @@ export function Badge({ children, tone = "blue", className }: { children: ReactN
     white: "bg-white text-navy",
   };
   return (
-    <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider", tones[tone], className)}>
+    <span className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider", tones[tone], className)}>
       {children}
     </span>
   );
@@ -67,11 +67,11 @@ export function SectionHeading({
   action?: ReactNode;
 }) {
   return (
-    <div className={cn("mb-10 flex flex-col gap-4", align === "center" ? "items-center text-center" : "items-start", action && "md:flex-row md:items-end md:justify-between")}>
+    <div className={cn("mb-7 flex flex-col gap-3", align === "center" ? "items-center text-center" : "items-start", action && "md:flex-row md:items-end md:justify-between")}>
       <div className={cn("max-w-2xl", align === "center" && "mx-auto")}>
         <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-ocean">{eyebrow}</p>
-        <h2 className="mt-3 font-heading text-3xl font-extrabold tracking-tight text-navy md:text-4xl">{title}</h2>
-        {desc && <p className="mt-3 leading-relaxed text-slate-600">{desc}</p>}
+        <h2 className="mt-2 font-heading text-2xl font-extrabold tracking-tight text-navy md:text-3xl">{title}</h2>
+        {desc && <p className="mt-2 text-[15px] leading-relaxed text-slate-600">{desc}</p>}
       </div>
       {action}
     </div>
