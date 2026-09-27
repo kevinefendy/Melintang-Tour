@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WaBubble from "@/components/WaBubble";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-heading",
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />
+        <WaBubble />
       </body>
     </html>
   );
