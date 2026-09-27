@@ -30,15 +30,10 @@ export function DestinationCard({ d }: { d: Destination }) {
 }
 
 export function TourCard({ t }: { t: Tour }) {
-  const discount = t.originalPrice ? Math.round((1 - t.price / t.originalPrice) * 100) : 0;
   return (
     <div className="img-zoom group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white">
       <div className="relative h-40">
         <Image src={t.image} alt={t.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
-        <div className="absolute left-3 top-3 flex gap-2">
-          {discount > 0 && <Badge tone="amber">Hemat {discount}%</Badge>}
-          {t.type.slice(0, 1).map((x) => <Badge key={x} tone="white">{x}</Badge>)}
-        </div>
       </div>
       <div className="flex flex-1 flex-col p-3.5">
         <Rating value={t.rating} count={t.reviews} />
