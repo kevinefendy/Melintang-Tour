@@ -29,13 +29,15 @@ export default function HomeClient() {
       {/* HERO */}
       <section className="bg-ocean">
         <div className="container-shell pb-28 pt-16 text-center md:pb-32 md:pt-20">
-          <h1 className="mx-auto max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl">
-            Berhenti Scroll. Mulai Packing.
-          </h1>
-          <p className="mx-auto mt-4 max-w-xl text-sky-100 md:text-lg">
-            48.000+ traveler sudah berangkat bareng Melintang Tour. Destinasi,
-            tour, dan itinerary beres dalam satu platform — giliranmu kapan?
-          </p>
+          <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 text-center shadow-2xl shadow-navy/30 md:p-10">
+            <h1 className="font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-ocean md:text-5xl">
+              Berhenti Scroll. Mulai Packing.
+            </h1>
+            <p className="mx-auto mt-4 max-w-xl text-slate-600 md:text-lg">
+              48.000+ traveler sudah berangkat bareng Melintang Tour. Destinasi,
+              tour, dan itinerary beres dalam satu platform — giliranmu kapan?
+            </p>
+          </div>
           <div className="mt-7 flex items-center justify-center gap-8 text-white md:gap-12">
             {[
               ["48K+", "Traveler berangkat"],
