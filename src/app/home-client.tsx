@@ -12,6 +12,14 @@ import { articles, deals, destinations, tours } from "@/data/mock";
 
 const filters = ["All", "Domestic", "International", "Family", "Honeymoon", "Private", "Group"] as const;
 
+const why = [
+  { no: "01", title: "Curated Journey", desc: "Paket perjalanan disusun untuk pengalaman yang lebih terarah." },
+  { no: "02", title: "Transparent Information", desc: "Harga, itinerary, fasilitas, dan ketentuan tampil jelas." },
+  { no: "03", title: "Easy Booking", desc: "Dari pilih tour sampai pembayaran, dibuat sederhana." },
+  { no: "04", title: "Travel Support", desc: "Butuh bantuan? Travel consultant siap dihubungi." },
+  { no: "05", title: "One Travel Platform", desc: "Destinasi, tour, experience, promo & guide dalam satu tempat." },
+];
+
 export default function HomeClient() {
   const [tab, setTab] = useState<(typeof filters)[number]>("All");
   const filtered = tab === "All" ? tours.slice(0, 4) : tours.filter((t) => t.type.includes(tab as never)).slice(0, 4);
@@ -116,6 +124,23 @@ export default function HomeClient() {
         <div className="grid gap-5 md:grid-cols-2">
           {deals.slice(0, 2).map((d) => (
             <PromoCard key={d.slug} deal={d} />
+          ))}
+        </div>
+      </section>
+
+      {/* WHY */}
+      <section className="container-shell py-12 md:py-14">
+        <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-ocean">Why Melintang Tour</p>
+        <h2 className="mt-2 max-w-2xl font-heading text-3xl font-extrabold tracking-tight text-navy md:text-4xl">
+          Bukan sekadar katalog. Ini cara baru merencanakan perjalanan.
+        </h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {why.map((w) => (
+            <div key={w.no} className="rounded-xl bg-white p-6 ring-1 ring-slate-200">
+              <p className="font-heading text-3xl font-extrabold text-ocean">{w.no}</p>
+              <h3 className="mt-3 font-heading text-lg font-extrabold text-navy">{w.title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-slate-600">{w.desc}</p>
+            </div>
           ))}
         </div>
       </section>
