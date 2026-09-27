@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Compass, Menu, X, Phone, Mail, ChevronDown, ReceiptText, CircleUserRound } from "lucide-react";
+import { Compass, Menu, X, ChevronDown } from "lucide-react";
 import { navLinks, regions } from "@/data/mock";
 import { cn } from "@/lib/utils";
 
@@ -16,32 +16,6 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-[0_1px_0_0_#e2e8f0]">
-      {/* TOP UTILITY STRIP */}
-      <div className="bg-navy text-slate-200">
-        <div className="container-shell flex h-9 items-center justify-between text-xs font-semibold">
-          <div className="flex items-center gap-4">
-            <a href="tel:+62215550134" className="hidden items-center gap-1.5 hover:text-white sm:inline-flex">
-              <Phone className="h-3.5 w-3.5 text-sky" /> +62 21 555 0134
-            </a>
-            <a href="mailto:hello@melintangtour.id" className="hidden items-center gap-1.5 hover:text-white md:inline-flex">
-              <Mail className="h-3.5 w-3.5 text-sky" /> hello@melintangtour.id
-            </a>
-            <span className="inline-flex items-center gap-1.5 text-slate-400 sm:hidden">
-              <Phone className="h-3.5 w-3.5 text-sky" /> +62 21 555 0134
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link href="/my-booking" className="inline-flex items-center gap-1.5 hover:text-white">
-              <ReceiptText className="h-3.5 w-3.5 text-sky" /> Cek Pesanan
-            </Link>
-            <span className="h-3 w-px bg-white/20" />
-            <Link href="/login" className="inline-flex items-center gap-1.5 hover:text-white">
-              <CircleUserRound className="h-3.5 w-3.5 text-sky" /> Masuk / Daftar
-            </Link>
-          </div>
-        </div>
-      </div>
-
       {/* MAIN BAR */}
       <div className="container-shell flex h-16 items-center justify-between gap-6 md:h-[72px]">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
@@ -102,7 +76,10 @@ export default function Navbar() {
           )}
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center gap-5 lg:flex">
+          <Link href="/login" className="text-sm font-bold text-navy hover:text-ocean">
+            Masuk
+          </Link>
           <Link
             href="/custom-trip"
             className="rounded-lg bg-ocean px-5 py-2.5 text-sm font-bold text-white hover:bg-ocean-dark"
@@ -137,8 +114,8 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="mt-3 grid grid-cols-2 gap-2">
-              <Link href="/my-booking" onClick={() => setOpen(false)} className="rounded-lg border border-slate-300 px-4 py-2.5 text-center text-sm font-bold text-navy">
-                Cek Pesanan
+              <Link href="/login" onClick={() => setOpen(false)} className="rounded-lg border border-slate-300 px-4 py-2.5 text-center text-sm font-bold text-navy">
+                Masuk / Daftar
               </Link>
               <Link href="/custom-trip" onClick={() => setOpen(false)} className="rounded-lg bg-ocean px-4 py-2.5 text-center text-sm font-bold text-white">
                 Plan My Trip
