@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { TicketPercent, CalendarClock, FileText, ArrowRight } from "lucide-react";
 import { Badge, Button, SectionHeading } from "@/components/ui";
@@ -31,23 +32,26 @@ export default function DealsClient() {
         {list.map((d) => {
           const tour = tours.find((t) => t.slug === d.tourSlug);
           return (
-            <article key={d.slug} className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
-              <div className="bg-navy p-6 text-white">
-                <div className="flex items-center justify-between">
+            <article key={d.slug} className="img-zoom overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <div className="relative h-48">
+                <Image src={d.image} alt={d.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
+                <div className="absolute left-3 top-3 flex gap-2">
                   <Badge tone="amber"><TicketPercent className="h-3 w-3" /> {d.category}</Badge>
-                  <span className="font-heading text-2xl font-extrabold">-{d.discount}</span>
                 </div>
-                <h3 className="mt-3 font-heading text-xl font-extrabold">{d.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  <span className="line-through opacity-60">{formatIDR(d.originalPrice)}</span>
-                  {" → "}<span className="font-heading text-lg font-extrabold text-sky">{formatIDR(d.finalPrice)}</span>
-                </p>
+                <span className="absolute right-3 top-3 rounded-lg bg-ocean px-2.5 py-1 font-heading text-sm font-extrabold text-white">
+                  -{d.discount}
+                </span>
               </div>
-              <div className="p-6">
+              <div className="p-4">
+                <h3 className="font-heading text-base font-extrabold text-navy">{d.title}</h3>
+                <p className="mt-1.5 text-sm text-slate-500">
+                  <span className="line-through">{formatIDR(d.originalPrice)}</span>
+                  {" → "}<span className="font-heading text-lg font-extrabold text-ocean">{formatIDR(d.finalPrice)}</span>
+                </p>
                 <p className="flex items-center gap-2 text-sm font-semibold text-slate-600">
                   <CalendarClock className="h-4 w-4 text-ocean" /> Valid until {formatDateID(d.validUntil)}
                 </p>
-                <div className="mt-3 rounded-2xl bg-slate-50 p-4">
+                <div className="mt-3 rounded-xl bg-slate-50 p-3.5">
                   <p className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-slate-400">
                     <FileText className="h-3.5 w-3.5" /> Terms & Conditions
                   </p>
@@ -55,7 +59,7 @@ export default function DealsClient() {
                     {d.terms.map((t) => <li key={t}>{t}</li>)}
                   </ul>
                 </div>
-                <div className="mt-4 flex gap-2">
+                <div className="mt-3.5 flex gap-2">
                   {tour && <Link href={`/tours/${tour.slug}`} className="flex-1"><Button className="w-full">View Deal <ArrowRight className="h-4 w-4" /></Button></Link>}
                   <Link href="/contact"><Button variant="outline">Ask Consultant</Button></Link>
                 </div>
