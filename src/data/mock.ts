@@ -364,12 +364,12 @@ export const tours: Tour[] = [
 ];
 
 export const experiences: Experience[] = [
-  { slug: "bali-sunset-sailing", title: "Bali Sunset Sailing", location: "Bali, Indonesia", duration: "2 Hours", price: 650000, image: img("photo-1544551763-46a013bb70d5", 800), category: "Cruise", rating: 4.9 },
+  { slug: "bali-sunset-sailing", title: "Bali Sunset Sailing", location: "Bali, Indonesia", duration: "2 Hours", price: 650000, image: "https://images.pexels.com/photos/18649049/pexels-photo-18649049.jpeg?auto=compress&cs=tinysrgb&w=800", category: "Cruise", rating: 4.9 },
   { slug: "tokyo-food-tour", title: "Tokyo Night Food Tour", location: "Tokyo, Japan", duration: "4 Hours", price: 1200000, image: img("photo-1554797589-7241bb691973", 800), category: "Food", rating: 4.9 },
   { slug: "ubud-cooking-class", title: "Ubud Cooking Class", location: "Bali, Indonesia", duration: "5 Hours", price: 450000, image: img("photo-1556910103-1c02745aae4d", 800), category: "Culture", rating: 4.8 },
-  { slug: "cappadocia-balloon", title: "Cappadocia Sunrise Balloon", location: "Cappadocia, Türkiye", duration: "3 Hours", price: 4500000, image: img("photo-1570939274717-7eda259b50ed", 800), category: "Adventure", rating: 5.0 },
-  { slug: "nami-day-pass", title: "Nami Island Day Pass", location: "Seoul, Korea", duration: "8 Hours", price: 750000, image: img("photo-1517154421773-0529f29ea451", 800), category: "City Tour", rating: 4.7 },
-  { slug: "swiss-alps-rail", title: "Swiss Panoramic Rail", location: "Lucerne, Switzerland", duration: "Full Day", price: 3200000, image: img("photo-1531366936337-7c912a4589a7", 800), category: "City Tour", rating: 4.9 },
+  { slug: "cappadocia-balloon", title: "Cappadocia Sunrise Balloon", location: "Cappadocia, Türkiye", duration: "3 Hours", price: 4500000, image: "https://images.pexels.com/photos/39244506/pexels-photo-39244506.jpeg?auto=compress&cs=tinysrgb&w=800", category: "Adventure", rating: 5.0 },
+  { slug: "nami-day-pass", title: "Nami Island Day Pass", location: "Seoul, Korea", duration: "8 Hours", price: 750000, image: "https://images.pexels.com/photos/34991218/pexels-photo-34991218.jpeg?auto=compress&cs=tinysrgb&w=800", category: "City Tour", rating: 4.7 },
+  { slug: "swiss-alps-rail", title: "Swiss Panoramic Rail", location: "Lucerne, Switzerland", duration: "Full Day", price: 3200000, image: "https://images.pexels.com/photos/16418192/pexels-photo-16418192.jpeg?auto=compress&cs=tinysrgb&w=800", category: "City Tour", rating: 4.9 },
 ];
 
 export const deals: Deal[] = [
