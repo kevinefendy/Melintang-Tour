@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { CalendarDays, FileText, Headset, Receipt, TicketCheck } from "lucide-react";
-import { Badge, Button } from "@/components/ui";
+import { Button } from "@/components/ui";
 import { formatIDR } from "@/lib/format";
 import { tours } from "@/data/mock";
 
@@ -34,7 +34,7 @@ export default function MyBookingClient() {
                   <span>
                     <span className="block font-heading text-sm font-extrabold text-navy">{t.title}</span>
                     <span className="block text-xs text-slate-500">{b.date} • {b.id}</span>
-                    <Badge tone={b.status === "Confirmed" ? "green" : "amber"} className="mt-1">{b.status}</Badge>
+                    <span className={`mt-1 block text-xs font-bold ${b.status === "Confirmed" ? "text-emerald-700" : "text-amber-700"}`}>{b.status}</span>
                   </span>
                 </div>
               </button>
@@ -48,7 +48,7 @@ export default function MyBookingClient() {
               <h2 className="font-heading text-2xl font-extrabold text-navy">{tour.title}</h2>
               <p className="mt-1 flex items-center gap-2 text-sm text-slate-500"><CalendarDays className="h-4 w-4" /> {active.date} • {active.travelers} travelers</p>
             </div>
-            <Badge tone={active.status === "Confirmed" ? "green" : "amber"}>{active.status}</Badge>
+            <span className={`text-sm font-bold ${active.status === "Confirmed" ? "text-emerald-700" : "text-amber-700"}`}>{active.status}</span>
           </div>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">

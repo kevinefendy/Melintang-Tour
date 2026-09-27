@@ -4,7 +4,7 @@ import { ArrowRight, Clock, MapPin, Plane } from "lucide-react";
 import { formatIDR } from "@/lib/format";
 import type { Article, Deal, Destination, Experience, Tour } from "@/data/mock";
 import { tours as allTours } from "@/data/mock";
-import { Badge, Rating } from "./ui";
+import { Rating } from "./ui";
 
 export function DestinationCard({ d }: { d: Destination }) {
   const count = allTours.filter((t) => t.destinationSlug === d.slug).length;
@@ -12,7 +12,6 @@ export function DestinationCard({ d }: { d: Destination }) {
     <Link href={`/destinations/${d.slug}`} className="img-zoom group block overflow-hidden rounded-xl border border-slate-200 bg-white">
       <div className="relative h-40">
         <Image src={d.image} alt={d.name} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
-        <div className="absolute left-3 top-3"><Badge tone="white">{d.region}</Badge></div>
       </div>
       <div className="flex items-center justify-between gap-3 p-3.5">
         <div>
@@ -61,7 +60,6 @@ export function ExperienceCard({ e }: { e: Experience }) {
     <Link href="/experiences" className="img-zoom group overflow-hidden rounded-xl border border-slate-200 bg-white">
       <div className="relative h-36">
         <Image src={e.image} alt={e.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 25vw" />
-        <div className="absolute left-4 top-4"><Badge tone="white">{e.category}</Badge></div>
       </div>
       <div className="p-4">
         <h3 className="font-heading text-[15px] font-extrabold text-navy group-hover:text-ocean">{e.title}</h3>
@@ -85,7 +83,6 @@ export function PromoCard({ deal }: { deal: Deal }) {
         <div className="absolute inset-0 bg-navy/65" />
       </div>
       <div className="absolute inset-0 flex flex-col justify-center p-6">
-        <Badge tone="amber" className="w-fit">Special Offer — {deal.category}</Badge>
         <h3 className="mt-2.5 max-w-sm font-heading text-xl font-extrabold text-white md:text-2xl">{deal.title}</h3>
         <p className="mt-1.5 text-sm text-slate-200">
           <span className="line-through opacity-70">{formatIDR(deal.originalPrice)}</span>
@@ -104,7 +101,6 @@ export function ArticleCard({ a }: { a: Article }) {
     <Link href="/travel-guide" className="img-zoom group overflow-hidden rounded-xl border border-slate-200 bg-white">
       <div className="relative h-36">
         <Image src={a.image} alt={a.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
-        <div className="absolute left-4 top-4"><Badge tone="white">{a.category}</Badge></div>
       </div>
       <div className="p-4">
         <h3 className="font-heading text-[15px] font-extrabold leading-snug text-navy line-clamp-2 group-hover:text-ocean">{a.title}</h3>

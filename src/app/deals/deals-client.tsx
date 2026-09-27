@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { TicketPercent, CalendarClock, FileText, ArrowRight } from "lucide-react";
-import { Badge, Button, SectionHeading } from "@/components/ui";
+import { CalendarClock, FileText, ArrowRight } from "lucide-react";
+import { Button, SectionHeading } from "@/components/ui";
 import { formatIDR, formatDateID } from "@/lib/format";
 import { deals, tours } from "@/data/mock";
 
@@ -35,18 +35,13 @@ export default function DealsClient() {
             <article key={d.slug} className="img-zoom overflow-hidden rounded-xl border border-slate-200 bg-white">
               <div className="relative h-48">
                 <Image src={d.image} alt={d.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
-                <div className="absolute left-3 top-3 flex gap-2">
-                  <Badge tone="amber"><TicketPercent className="h-3 w-3" /> {d.category}</Badge>
-                </div>
-                <span className="absolute right-3 top-3 rounded-lg bg-ocean px-2.5 py-1 font-heading text-sm font-extrabold text-white">
-                  -{d.discount}
-                </span>
               </div>
               <div className="p-4">
                 <h3 className="font-heading text-base font-extrabold text-navy">{d.title}</h3>
                 <p className="mt-1.5 text-sm text-slate-500">
                   <span className="line-through">{formatIDR(d.originalPrice)}</span>
                   {" → "}<span className="font-heading text-lg font-extrabold text-ocean">{formatIDR(d.finalPrice)}</span>
+                  {" "}<span className="text-xs font-bold text-emerald-700">Hemat {d.discount}</span>
                 </p>
                 <p className="flex items-center gap-2 text-sm font-semibold text-slate-600">
                   <CalendarClock className="h-4 w-4 text-ocean" /> Valid until {formatDateID(d.validUntil)}

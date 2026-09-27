@@ -7,7 +7,7 @@ import {
   MapPin, Plane, UtensilsCrossed, UserCheck, X,
 } from "lucide-react";
 import { TourCard } from "@/components/cards";
-import { Badge, Button, Rating } from "@/components/ui";
+import { Button, Rating } from "@/components/ui";
 import { ItineraryTimeline } from "@/components/sections";
 import ConsultantCTA from "@/components/sections";
 import { formatIDR, formatDateID } from "@/lib/format";
@@ -53,9 +53,6 @@ export default async function TourDetail({ params }: { params: Promise<{ slug: s
           <Link href="/tours" className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/30">
             <ArrowLeft className="h-4 w-4" /> All Tours
           </Link>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {t.type.map((x) => <Badge key={x} tone="white">{x}</Badge>)}
-          </div>
           <h1 className="mt-4 max-w-3xl font-heading text-4xl font-extrabold text-white md:text-5xl">{t.title}</h1>
           <p className="mt-3 text-lg text-slate-200">{t.duration} • {t.route.join(" • ")}</p>
           <div className="mt-3"><Rating value={t.rating} count={t.reviews} className="text-white" /></div>
