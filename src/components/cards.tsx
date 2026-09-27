@@ -10,7 +10,7 @@ export function DestinationCard({ d }: { d: Destination }) {
     <Link href={`/destinations/${d.slug}`} className="img-zoom group relative block overflow-hidden rounded-3xl bg-navy">
       <div className="relative h-80">
         <Image src={d.image} alt={d.name} fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent" />
+        <div className="absolute inset-0 bg-navy/55" />
       </div>
       <div className="absolute inset-x-0 bottom-0 p-6">
         <Badge tone="white" className="mb-3">{d.region}</Badge>
@@ -82,7 +82,7 @@ export function PromoCard({ deal }: { deal: Deal }) {
     <Link href="/deals" className="img-zoom group relative block overflow-hidden rounded-3xl">
       <div className="relative h-72">
         <Image src={deal.image} alt={deal.title} fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/50 to-transparent" />
+        <div className="absolute inset-0 bg-navy/65" />
       </div>
       <div className="absolute inset-0 flex flex-col justify-center p-8">
         <Badge tone="amber" className="w-fit">Special Offer — {deal.category}</Badge>

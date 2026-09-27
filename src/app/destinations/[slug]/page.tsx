@@ -35,10 +35,10 @@ export default async function DestinationDetail({ params }: { params: Promise<{ 
       <section className="relative overflow-hidden bg-navy">
         <div className="absolute inset-0">
           <Image src={d.image} alt={d.name} fill className="object-cover opacity-60" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-navy/20" />
+          <div className="absolute inset-0 bg-navy/40" />
         </div>
         <div className="container-shell relative py-16 md:py-24">
-          <Link href="/destinations" className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur hover:bg-white/20">
+          <Link href="/destinations" className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/30">
             <ArrowLeft className="h-4 w-4" /> All Destinations
           </Link>
           <div className="mt-6 max-w-2xl">

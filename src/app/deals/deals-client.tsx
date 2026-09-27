@@ -32,7 +32,7 @@ export default function DealsClient() {
           const tour = tours.find((t) => t.slug === d.tourSlug);
           return (
             <article key={d.slug} className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
-              <div className="bg-gradient-to-r from-navy to-ocean-dark p-6 text-white">
+              <div className="bg-navy p-6 text-white">
                 <div className="flex items-center justify-between">
                   <Badge tone="amber"><TicketPercent className="h-3 w-3" /> {d.category}</Badge>
                   <span className="font-heading text-2xl font-extrabold">-{d.discount}</span>
