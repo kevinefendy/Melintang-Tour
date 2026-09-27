@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import DestinationsClient from "./destinations-client";
 
 export const metadata: Metadata = {
@@ -7,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function DestinationsPage() {
-  return <DestinationsClient />;
+  return (
+    <Suspense fallback={<div className="container-shell py-16 text-slate-500">Loading destinations…</div>}>
+      <DestinationsClient />
+    </Suspense>
+  );
 }

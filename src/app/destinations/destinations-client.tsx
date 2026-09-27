@@ -1,14 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { Search } from "lucide-react";
 import { DestinationCard } from "@/components/cards";
 import { SectionHeading } from "@/components/ui";
 import { destinations, regions } from "@/data/mock";
 
 export default function DestinationsClient() {
-  const [q, setQ] = useState("");
-  const [region, setRegion] = useState<string>("All");
+  const sp = useSearchParams();
+  const [q, setQ] = useState(sp.get("q") ?? "");
+  const [region, setRegion] = useState<string>(sp.get("region") ?? "All");
 
   const list = useMemo(() => {
     return destinations.filter((d) => {

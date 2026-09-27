@@ -28,7 +28,7 @@ export default function HomeClient() {
     <main>
       {/* HERO */}
       <section className="bg-ocean">
-        <div className="container-shell py-20 text-center md:py-28">
+        <div className="container-shell pb-28 pt-16 text-center md:pb-32 md:pt-20">
           <h1 className="mx-auto max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl">
             Berhenti Scroll. Mulai Packing.
           </h1>
@@ -48,11 +48,13 @@ export default function HomeClient() {
               </div>
             ))}
           </div>
-          <div className="mx-auto mt-8 max-w-4xl">
-            <SearchBox />
-          </div>
         </div>
       </section>
+      <div className="container-shell">
+        <div className="relative z-10 mx-auto -mt-20 max-w-5xl md:-mt-24">
+          <SearchBox />
+        </div>
+      </div>
 
       {/* POPULAR DESTINATIONS */}
       <section className="container-shell py-16 md:py-20">
