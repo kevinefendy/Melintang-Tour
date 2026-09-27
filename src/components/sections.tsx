@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Headset } from "lucide-react";
 import { Button } from "./ui";
 
 export default function ConsultantCTA({
@@ -11,16 +10,14 @@ export default function ConsultantCTA({
 }) {
   return (
     <section className="container-shell pb-14">
-      <div className="relative overflow-hidden rounded-2xl bg-navy px-6 py-10 text-center md:py-12">
-        <div className="relative mx-auto max-w-2xl">
-          <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-sky">
-            <Headset className="h-5 w-5" />
-          </span>
-          <h2 className="mt-4 font-heading text-2xl font-extrabold text-white md:text-3xl">{title}</h2>
-          <p className="mt-2 text-[15px] text-slate-300">{desc}</p>
+      <div className="rounded-2xl bg-white px-6 py-10 text-center ring-1 ring-slate-200 md:py-12">
+        <div className="mx-auto max-w-2xl">
+          <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-ocean">Travel Consultant</p>
+          <h2 className="mt-2 font-heading text-2xl font-extrabold text-navy md:text-3xl">{title}</h2>
+          <p className="mt-2 text-[15px] text-slate-600">{desc}</p>
           <div className="mt-5 flex flex-col justify-center gap-2 sm:flex-row">
             <Link href="/contact"><Button>Talk to a Travel Consultant</Button></Link>
-            <Link href="/custom-trip"><Button variant="light">Build My Trip</Button></Link>
+            <Link href="/custom-trip"><Button variant="outline">Build My Trip</Button></Link>
           </div>
         </div>
       </div>
