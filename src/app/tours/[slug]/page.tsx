@@ -47,10 +47,10 @@ export default async function TourDetail({ params }: { params: Promise<{ slug: s
       <section className="relative overflow-hidden bg-navy">
         <div className="absolute inset-0">
           <Image src={t.image} alt={t.title} fill className="object-cover opacity-50" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-navy/30" />
+          <div className="absolute inset-0 bg-navy/45" />
         </div>
         <div className="container-shell relative py-14 md:py-20">
-          <Link href="/tours" className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur hover:bg-white/20">
+          <Link href="/tours" className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/30">
             <ArrowLeft className="h-4 w-4" /> All Tours
           </Link>
           <div className="mt-6 flex flex-wrap gap-2">

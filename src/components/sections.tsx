@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Headset, Check } from "lucide-react";
+import { Headset } from "lucide-react";
 import { Button } from "./ui";
 
 export default function ConsultantCTA({
@@ -12,8 +12,6 @@ export default function ConsultantCTA({
   return (
     <section className="container-shell pb-20">
       <div className="relative overflow-hidden rounded-[2rem] bg-navy px-8 py-14 text-center md:py-16">
-        <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-ocean/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-sky/20 blur-3xl" />
         <div className="relative mx-auto max-w-2xl">
           <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-sky">
             <Headset className="h-7 w-7" />
@@ -23,11 +21,6 @@ export default function ConsultantCTA({
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/contact"><Button size="lg">Talk to a Travel Consultant</Button></Link>
             <Link href="/custom-trip"><Button size="lg" variant="light">Build My Trip</Button></Link>
-          </div>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-slate-400">
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-emerald-400" /> Fast response</span>
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-emerald-400" /> WhatsApp / Phone / Email</span>
-            <span className="inline-flex items-center gap-1.5"><Check className="h-3.5 w-3.5 text-emerald-400" /> Free consultation</span>
           </div>
         </div>
       </div>

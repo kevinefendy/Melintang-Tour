@@ -48,7 +48,7 @@ export default function GuideClient() {
       {featured && (
         <Link href={`/travel-guide/${featured.slug}`} className="img-zoom group relative mb-8 block overflow-hidden rounded-3xl">
           <img src={featured.image} alt={featured.title} className="h-80 w-full object-cover md:h-96" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent" />
+          <div className="absolute inset-0 bg-navy/60" />
           <div className="absolute inset-x-0 bottom-0 p-8">
             <span className="rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-navy">{featured.category} • Featured</span>
             <h2 className="mt-3 max-w-2xl font-heading text-2xl font-extrabold text-white md:text-4xl">{featured.title}</h2>

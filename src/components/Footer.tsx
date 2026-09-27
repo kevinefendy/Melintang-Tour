@@ -54,7 +54,6 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-shell flex flex-col items-center justify-between gap-2 py-5 text-xs text-slate-500 md:flex-row">
           <span>© 2026 Melintang Tour. All rights reserved.</span>
-          <span>Premium Modern Travel — Clean · Editorial · Image-focused</span>
         </div>
       </div>
     </footer>

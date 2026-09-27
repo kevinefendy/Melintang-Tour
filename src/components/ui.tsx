@@ -44,7 +44,7 @@ export function Badge({ children, tone = "blue", className }: { children: ReactN
     dark: "bg-navy text-white",
     amber: "bg-amber-100 text-amber-800",
     green: "bg-emerald-100 text-emerald-800",
-    white: "bg-white/90 text-navy backdrop-blur",
+    white: "bg-white text-navy",
   };
   return (
     <span className={cn("inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider", tones[tone], className)}>

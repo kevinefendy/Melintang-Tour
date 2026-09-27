@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, ShieldCheck, Sparkles, Wallet, Headset, Globe2 } from "lucide-react";
 import SearchBox from "@/components/SearchBox";
 import { ArticleCard, DestinationCard, PromoCard, TourCard } from "@/components/cards";
-import { Badge, Button, SectionHeading } from "@/components/ui";
+import { Button, SectionHeading } from "@/components/ui";
 import ConsultantCTA from "@/components/sections";
 import { articles, deals, destinations, tours } from "@/data/mock";
 
@@ -28,37 +27,29 @@ export default function HomeClient() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-navy">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000&auto=format&fit=crop"
-            alt="Tropical beach"
-            fill
-            className="object-cover opacity-50"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/40 to-navy" />
-        </div>
-        <div className="container-shell relative py-20 md:py-28">
-          <div className="mx-auto max-w-3xl text-center">
-            <Badge tone="white" className="mb-5">One-stop travel platform</Badge>
-            <h1 className="font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl">
-              Explore Beyond Boundaries.
-            </h1>
-            <p className="mx-auto mt-4 max-w-xl text-slate-200 md:text-lg">
-              Discover destinations, curated tours, and unforgettable travel experiences with Melintang Tour.
-            </p>
+      <section className="bg-ocean">
+        <div className="container-shell py-20 text-center md:py-28">
+          <h1 className="mx-auto max-w-3xl font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-6xl">
+            Berhenti Scroll. Mulai Packing.
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-sky-100 md:text-lg">
+            48.000+ traveler sudah berangkat bareng Melintang Tour. Destinasi,
+            tour, dan itinerary beres dalam satu platform — giliranmu kapan?
+          </p>
+          <div className="mt-7 flex items-center justify-center gap-8 text-white md:gap-12">
+            {[
+              ["48K+", "Traveler berangkat"],
+              ["120+", "Tour terkurasi"],
+              ["4.9/5", "Rating traveler"],
+            ].map(([n, l]) => (
+              <div key={l}>
+                <p className="font-heading text-2xl font-extrabold md:text-4xl">{n}</p>
+                <p className="mt-1 text-xs font-semibold text-sky-100 md:text-sm">{l}</p>
+              </div>
+            ))}
           </div>
           <div className="mx-auto mt-8 max-w-4xl">
             <SearchBox />
-          </div>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-slate-300">
-            <span className="opacity-70">Popular:</span>
-            {["Bali", "Japan", "Korea", "Europe"].map((p) => (
-              <Link key={p} href={`/tours?q=${p}`} className="rounded-full border border-white/25 px-3 py-1 hover:bg-white hover:text-navy">
-                {p}
-              </Link>
-            ))}
           </div>
         </div>
       </section>
@@ -131,7 +122,7 @@ export default function HomeClient() {
           </h2>
           <div className="mt-10 grid gap-4 md:grid-cols-3 lg:grid-cols-5">
             {why.map((w) => (
-              <div key={w.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <div key={w.title} className="rounded-3xl bg-navy-light p-6">
                 <w.icon className="h-7 w-7 text-sky" />
                 <h3 className="mt-4 font-heading font-extrabold text-white">{w.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{w.desc}</p>
