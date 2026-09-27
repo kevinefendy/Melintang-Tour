@@ -9,7 +9,7 @@ export default function AnnouncementBar() {
   if (!show) return null;
 
   return (
-    <div className="bg-navy text-white">
+    <div className="bg-[#3e6da8] text-white">
       <div className="container-shell flex h-10 items-center justify-center gap-2 text-center text-[13px] font-semibold">
         <p className="truncate">
           Flash Sale: Thailand Adventure hemat 10% — berakhir 10 Februari 2027.
