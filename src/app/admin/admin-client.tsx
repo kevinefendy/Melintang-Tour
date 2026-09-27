@@ -6,7 +6,7 @@ import {
   LayoutDashboard, Map, Route, CalendarCheck, Users, Newspaper,
   Plus, Pencil, Trash2, Eye, Search,
 } from "lucide-react";
-import { Badge, Button } from "@/components/ui";
+import { Button } from "@/components/ui";
 import { formatIDR } from "@/lib/format";
 import { articles, destinations, tours } from "@/data/mock";
 
@@ -46,7 +46,7 @@ export default function AdminClient() {
           <p className="text-xs font-extrabold uppercase tracking-[0.25em] text-ocean">Admin • MVP</p>
           <h1 className="mt-2 font-heading text-3xl font-extrabold text-navy">Dashboard</h1>
         </div>
-        <Badge tone="dark">Role: Admin (frontend mock)</Badge>
+        <span className="text-sm font-semibold text-slate-500">Role: Admin (frontend mock)</span>
       </div>
 
       <div className="mt-6 flex gap-2 overflow-x-auto pb-2">
@@ -77,7 +77,7 @@ export default function AdminClient() {
             t.title,
             t.type.join(", "),
             formatIDR(t.price),
-            <Badge key="s" tone="green">Published</Badge>,
+            <span key="s" className="font-semibold text-emerald-700">Published</span>,
             <RowActions key="a" />,
           ])}
         />
@@ -92,7 +92,7 @@ export default function AdminClient() {
             d.name,
             d.region,
             String(tours.filter((t) => t.destinationSlug === d.slug).length),
-            <Badge key="s" tone="blue">Active</Badge>,
+            <span key="s" className="font-semibold text-ocean">Active</span>,
             <RowActions key="a" />,
           ])}
         />
@@ -105,8 +105,8 @@ export default function AdminClient() {
           head={["Booking ID", "Customer", "Tour", "Total", "Payment", "Booking", "Actions"]}
           rows={bookingRows.map((b) => [
             b.id, b.customer, `${b.tour} • ${b.dep} • ${b.travelers}pax`, formatIDR(b.total),
-            <Badge key="p" tone={b.pay === "Paid" ? "green" : "amber"}>{b.pay}</Badge>,
-            <Badge key="b" tone={b.book === "Confirmed" ? "green" : "amber"}>{b.book}</Badge>,
+            <span key="p" className={`font-semibold ${b.pay === "Paid" ? "text-emerald-700" : "text-amber-700"}`}>{b.pay}</span>,
+            <span key="b" className={`font-semibold ${b.book === "Confirmed" ? "text-emerald-700" : "text-amber-700"}`}>{b.book}</span>,
             <span key="a" className="flex gap-1">
               <IconBtn label="View"><Eye className="h-4 w-4" /></IconBtn>
               <IconBtn label="Confirm"><Plus className="h-4 w-4" /></IconBtn>
@@ -135,7 +135,7 @@ export default function AdminClient() {
           head={["Title", "Category", "Date", "Status", "Actions"]}
           rows={articles.map((a) => [
             a.title, a.category, a.date,
-            <Badge key="s" tone="blue">Published</Badge>,
+            <span key="s" className="font-semibold text-ocean">Published</span>,
             <RowActions key="a" />,
           ])}
         />

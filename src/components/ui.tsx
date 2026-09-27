@@ -38,21 +38,6 @@ export function Button({ variant = "primary", size = "md", className, ...props }
   );
 }
 
-export function Badge({ children, tone = "blue", className }: { children: ReactNode; tone?: "blue" | "dark" | "amber" | "green" | "white"; className?: string }) {
-  const tones = {
-    blue: "bg-sky/15 text-ocean-dark",
-    dark: "bg-navy text-white",
-    amber: "bg-amber-100 text-amber-800",
-    green: "bg-emerald-100 text-emerald-800",
-    white: "bg-white text-navy",
-  };
-  return (
-    <span className={cn("inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider", tones[tone], className)}>
-      {children}
-    </span>
-  );
-}
-
 export function SectionHeading({
   eyebrow,
   title,

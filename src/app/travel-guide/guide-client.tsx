@@ -50,7 +50,6 @@ export default function GuideClient() {
           <img src={featured.image} alt={featured.title} className="h-80 w-full object-cover md:h-96" />
           <div className="absolute inset-0 bg-navy/60" />
           <div className="absolute inset-x-0 bottom-0 p-8">
-            <span className="rounded-full bg-white/90 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-navy">{featured.category} • Featured</span>
             <h2 className="mt-3 max-w-2xl font-heading text-2xl font-extrabold text-white md:text-4xl">{featured.title}</h2>
             <p className="mt-2 max-w-xl text-sm text-slate-200">{featured.excerpt}</p>
             <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-bold text-navy">Read Article <ArrowRight className="h-4 w-4" /></span>

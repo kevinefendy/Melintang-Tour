@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays, Lightbulb, MapPin } from "lucide-react";
 import { ArticleCard, TourCard } from "@/components/cards";
-import { Badge, Button, Rating } from "@/components/ui";
+import { Button, Rating } from "@/components/ui";
 import ConsultantCTA from "@/components/sections";
 import { articles, destinations, tours } from "@/data/mock";
 
@@ -42,7 +42,6 @@ export default async function DestinationDetail({ params }: { params: Promise<{ 
             <ArrowLeft className="h-4 w-4" /> All Destinations
           </Link>
           <div className="mt-6 max-w-2xl">
-            <Badge tone="white">{d.region}</Badge>
             <h1 className="mt-4 font-heading text-4xl font-extrabold text-white md:text-6xl">Discover {d.name}</h1>
             <p className="mt-3 text-lg text-slate-200">{d.tagline}</p>
             <div className="mt-4 flex items-center gap-3">

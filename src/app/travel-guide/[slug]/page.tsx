@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Clock, CalendarDays } from "lucide-react";
 import { ArticleCard, TourCard } from "@/components/cards";
-import { Badge, Button } from "@/components/ui";
+import { Button } from "@/components/ui";
 import { articles, tours } from "@/data/mock";
 
 export async function generateStaticParams() {
@@ -28,7 +28,6 @@ export default async function ArticleDetail({ params }: { params: Promise<{ slug
         <ArrowLeft className="h-4 w-4" /> All Articles
       </Link>
       <div className="mx-auto mt-6 max-w-3xl">
-        <Badge tone="blue">{a.category}</Badge>
         <h1 className="mt-3 font-heading text-3xl font-extrabold text-navy md:text-5xl">{a.title}</h1>
         <p className="mt-3 flex items-center gap-4 text-sm text-slate-500">
           <span className="inline-flex items-center gap-1.5"><CalendarDays className="h-4 w-4" /> {a.date}</span>

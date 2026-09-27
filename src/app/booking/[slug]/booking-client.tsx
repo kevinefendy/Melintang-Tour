@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, CreditCard, QrCode, Wallet, Landmark } from "lucide-react";
-import { Button, Badge } from "@/components/ui";
+import { Button } from "@/components/ui";
 import { formatIDR, formatDateID } from "@/lib/format";
 import type { Tour } from "@/data/mock";
 
@@ -148,7 +148,7 @@ export default function BookingClient({ tour }: { tour: Tour }) {
                 ))}
               </div>
               <div className="mt-4 rounded-2xl bg-amber-50 p-4 text-sm text-amber-800 ring-1 ring-amber-200">
-                Selesaikan pembayaran <span className="font-extrabold">{formatIDR(grand)}</span> dalam 60 menit. Status: <Badge tone="amber">Pending</Badge> → Paid / Expired / Cancelled / Refunded.
+                Selesaikan pembayaran <span className="font-extrabold">{formatIDR(grand)}</span> dalam 60 menit. Status: <span className="font-extrabold">Pending</span> → Paid / Expired / Cancelled / Refunded.
               </div>
             </div>
           )}
